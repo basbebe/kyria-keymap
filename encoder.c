@@ -1,3 +1,4 @@
+#include QMK_KEYBOARD_H
 #include "keymap.h"
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
@@ -11,10 +12,10 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     } else if (index == 1) {
         // Page up/Page down
         if (clockwise) {
-            tap_code(KC_PGDN);
-        } else {
             tap_code(KC_PGUP);
+        } else {
+            tap_code(KC_PGDN);
         }
     }
-    return true;
+    return false;
 }
