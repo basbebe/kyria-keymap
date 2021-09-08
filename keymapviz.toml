@@ -149,8 +149,11 @@ OS_LSFT = 1-SHOT⇧
 OS_RSFT = 1-SHOT⇧
 
 A_UML = Ä
+MT_AUML = Ä/⎇
 O_UML = Ö
 U_UML = Ü
+ESZETT = ß
+MT_ESZT = ß/⎈
 ELLIPS = …
 
 ARROW_R = -> =>

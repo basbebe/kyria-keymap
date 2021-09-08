@@ -4,28 +4,21 @@
 
 // Initialize variable holding the binary
 // representation of active modifiers.
-uint8_t mod_state;
-uint8_t oneshot_mod_state;
+uint8_t  mod_state;
+uint8_t  oneshot_mod_state;
 uint16_t last_keycode;
 
 bool caps_word_on;
 void caps_word_enable(void);
 void caps_word_disable(void);
 
-enum layers {
-    _OK = 0,
-    _QWERTY,
-    _SYM_L,
-    _SYM_R,
-    _NUM,
-    _NAV,
-    _FUN,
-    _ADJUST
-};
+enum layers { _OK = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
 
 // Layer keys
-#define OSS_SYM TD(TD_OSS)
-#define SPC_SYM LT(_SYM_L, KC_SPACE)
+#define OSS_NUM TD(TD_OSS)
+#define SPC_NAV LT(_NAV, KC_SPACE)
+#define SYM_L MO(_SYM_L)
+#define TAB_SYM LT(_SYM_R, KC_TAB)
 
 // Miscellaneous keyboard shortcuts in direct access
 #define UNDO LCTL(KC_Z)
@@ -51,25 +44,24 @@ enum layers {
 #define OS_LSFT OSM(MOD_LSFT)
 #define OS_RSFT OSM(MOD_RSFT)
 
-// German Umlauts
-// The other accented letters are created using R_ALT
-// assumes eurkey base layout
-#define A_UML ALGR(KC_A)
-#define O_UML ALGR(KC_O)
-#define U_UML ALGR(KC_U)
-#define Eszett ALGR(KC_S)
-
 // Symbols
-#define ELLIPS SAGR(KC_SLASH)
+#define MT_AUML TD(TD_AUML)
+#define MT_ESZT TD(TD_ESZT)
 
+// Custom Keycodes
 enum custom_keycodes {
-  CAPS_WORD,
-  REPEAT
+    CAPS_WORD,
+    REPEAT,
+    // German Umlauts
+    A_UML,
+    O_UML,
+    U_UML,
+    ESZETT,
+    // Symbols
+    ELLIPS
 };
 
 // Tap Dance keycodes
 #ifdef TAP_DANCE_ENABLE
-enum td_keycodes {
-    TD_OSS
-};
+enum td_keycodes { TD_OSS, TD_AUML, TD_ESZT };
 #endif

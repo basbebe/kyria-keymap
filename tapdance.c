@@ -23,6 +23,12 @@ td_state_t cur_dance(qk_tap_dance_state_t *state);
 void oss_finished(qk_tap_dance_state_t *state, void *user_data);
 void oss_reset(qk_tap_dance_state_t *state, void *user_data);
 
+void MT_AUML_finished(qk_tap_dance_state_t *state, void *user_data);
+void MT_AUML_reset(qk_tap_dance_state_t *state, void *user_data);
+
+void MT_ESZT_finished(qk_tap_dance_state_t *state, void *user_data);
+void MT_ESZT_reset(qk_tap_dance_state_t *state, void *user_data);
+
 // Determine the tapdance state to return
 td_state_t cur_dance(qk_tap_dance_state_t *state) {
     if (state->count == 1) {
@@ -34,7 +40,8 @@ td_state_t cur_dance(qk_tap_dance_state_t *state) {
     if (state->count == 2)
         return TD_DOUBLE_SINGLE_TAP;
     else
-        return TD_UNKNOWN;  // Any number higher than the maximum state value you return above
+        return TD_UNKNOWN;  // Any number higher than the maximum state value you
+                            // return above
 }
 
 // Handle the possible states for each tapdance keycode you define:
@@ -48,9 +55,7 @@ void oss_finished(qk_tap_dance_state_t *state, void *user_data) {
         case TD_SINGLE_HOLD:
             layer_on(_SYM_R);
             break;
-        case TD_DOUBLE_SINGLE_TAP:  // Allow nesting of 2 parens `((` within tapping term
-                                    // tap_code16(KC_LPRN);
-                                    // register_code16(KC_LPRN);
+        case TD_DOUBLE_SINGLE_TAP:
         case TD_UNKNOWN:
             break;
     }
@@ -66,11 +71,71 @@ void oss_reset(qk_tap_dance_state_t *state, void *user_data) {
             break;
         case TD_DOUBLE_SINGLE_TAP:
             clear_oneshot_mods();
-            // unregister_code16(KC_LPRN);
         case TD_UNKNOWN:
             break;
     }
 }
 
-// Define `ACTION_TAP_DANCE_FN_ADVANCED()` for each tapdance keycode, passing in `finished` and `reset` functions
-qk_tap_dance_action_t tap_dance_actions[] = {[TD_OSS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, oss_finished, oss_reset)};
+void MT_ESZT_finished(qk_tap_dance_state_t *state, void *user_data) {
+    td_state = cur_dance(state);
+    switch (td_state) {
+        case TD_SINGLE_TAP:
+            SEND_STRING(SS_RALT("s"));
+            break;
+        case TD_SINGLE_HOLD:
+            register_mods(MOD_BIT(KC_LCTRL));
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+        case TD_UNKNOWN:
+            break;
+    }
+}
+
+void MT_ESZT_reset(qk_tap_dance_state_t *state, void *user_data) {
+    switch (td_state) {
+        case TD_SINGLE_TAP:
+            break;
+        case TD_SINGLE_HOLD:
+            unregister_mods(MOD_BIT(KC_LCTRL));
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+        case TD_UNKNOWN:
+            break;
+    }
+}
+
+void MT_AUML_finished(qk_tap_dance_state_t *state, void *user_data) {
+    td_state = cur_dance(state);
+    switch (td_state) {
+        case TD_SINGLE_TAP:
+            SEND_STRING(SS_RALT("u") "a");
+            break;
+        case TD_SINGLE_HOLD:
+            register_mods(MOD_BIT(KC_LALT));
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+        case TD_UNKNOWN:
+            break;
+    }
+}
+
+void MT_AUML_reset(qk_tap_dance_state_t *state, void *user_data) {
+    switch (td_state) {
+        case TD_SINGLE_TAP:
+            break;
+        case TD_SINGLE_HOLD:
+            unregister_mods(MOD_BIT(KC_LALT));
+            break;
+        case TD_DOUBLE_SINGLE_TAP:
+        case TD_UNKNOWN:
+            break;
+    }
+}
+
+// Define `ACTION_TAP_DANCE_FN_ADVANCED()` for each tapdance keycode, passing in
+// `finished` and `reset` functions
+qk_tap_dance_action_t tap_dance_actions[] = {
+    [TD_OSS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, oss_finished, oss_reset), 
+    [TD_AUML] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, MT_AUML_finished, MT_AUML_reset),
+    [TD_ESZT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, MT_ESZT_finished, MT_ESZT_reset)
+};
