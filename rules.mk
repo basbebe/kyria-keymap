@@ -33,3 +33,6 @@ endif
 ifeq ($(strip $(OLED_ENABLE)), yes)
 	  SRC += oled.c
 endif
+ifeq ($(strip $(ENCODER_ENABLE)), yes)
+	  SRC += encoder.c
+endif
