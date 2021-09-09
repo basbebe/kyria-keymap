@@ -11,7 +11,7 @@ CONSOLE_ENABLE = no        # Console for debug
 COMMAND_ENABLE = no        # Commands for debug and configuration
 UNICODE_ENABLE = no        # Unicode
 UNICODEMAP_ENABLE = no     # Extended Unicode range
-SWAP_HANDS_ENABLE = yes    # Swap hands
+SWAP_HANDS_ENABLE = no     # Swap hands
 WPM_ENABLE = yes           # WPM Calculation
 TAP_DANCE_ENABLE = yes     # Enables Tab Dance
 LTO_ENABLE = yes           # Enables Link Time Optimization to minimize FW size
@@ -25,7 +25,7 @@ ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
     SRC += tapdance.c
 endif
 ifeq ($(strip $(SWAP_HANDS_ENABLE)), yes)
-    # SRC += swap_hand.c
+    SRC += swap_hand.c
 endif
 ifeq ($(strip $(RGBLIGHT_ENABLE)), yes)
 	  SRC += rgbled.c
