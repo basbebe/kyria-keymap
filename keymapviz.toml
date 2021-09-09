@@ -155,6 +155,8 @@ U_UML = Ü
 ESZETT = ß
 MT_ESZT = ß/⎈
 ELLIPS = …
+EURO = €
+MT_EURO = €/⇧
 
 ARROW_R = -> =>
 

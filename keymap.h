@@ -15,7 +15,7 @@ void caps_word_disable(void);
 enum layers { _OK = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
 
 // Layer keys
-#define OSS_NUM TD(TD_OSS)
+#define OSS_NUM LT(_NUM, OSS)
 #define SPC_NAV LT(_NAV, KC_SPACE)
 #define SYM_L MO(_SYM_L)
 #define TAB_SYM LT(_SYM_R, KC_TAB)
@@ -38,6 +38,7 @@ enum layers { _OK = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
 
 // Sym layer mod Taps
 #define MT_AUML LALT_T(A_UML)
+#define MT_EURO RSFT_T(EURO)
 #define MT_ESZT LCTL_T(ESZETT)
 
 // Mod Tap Right Alt
@@ -56,13 +57,15 @@ enum layers { _OK = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
 enum custom_keycodes {
     CAPS_WORD = SAFE_RANGE,
     REPEAT,
+    OSS,
     // German Umlauts
     A_UML,
     O_UML,
     U_UML,
     ESZETT,
     // Symbols
-    ELLIPS
+    ELLIPS,
+    EURO
 };
 
 // Tap Dance keycodes
