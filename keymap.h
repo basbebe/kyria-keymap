@@ -36,6 +36,10 @@ enum layers { _OK = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
 #define HOME_A LALT_T(KC_A)
 #define HOME_H RCTL_T(KC_H)
 
+// Sym layer mod Taps
+#define MT_AUML LALT_T(A_UML)
+#define MT_ESZT LCTL_T(ESZETT)
+
 // Mod Tap Right Alt
 #define MT_RA_Z RALT_T(KC_Z)
 #define MT_RA_W RALT_T(KC_W)
@@ -45,12 +49,12 @@ enum layers { _OK = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
 #define OS_RSFT OSM(MOD_RSFT)
 
 // Symbols
-#define MT_AUML TD(TD_AUML)
-#define MT_ESZT TD(TD_ESZT)
+// #define MT_AUML TD(TD_AUML)
+// #define MT_ESZT TD(TD_ESZT)
 
 // Custom Keycodes
 enum custom_keycodes {
-    CAPS_WORD,
+    CAPS_WORD = SAFE_RANGE,
     REPEAT,
     // German Umlauts
     A_UML,
@@ -63,5 +67,5 @@ enum custom_keycodes {
 
 // Tap Dance keycodes
 #ifdef TAP_DANCE_ENABLE
-enum td_keycodes { TD_OSS, TD_AUML, TD_ESZT };
+enum td_keycodes { TD_OSS };
 #endif

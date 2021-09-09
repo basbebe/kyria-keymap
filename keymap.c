@@ -34,9 +34,9 @@
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_OK] = LAYOUT(
-        SH_OS,   KC_X,    KC_P,    KC_L,    KC_C,    KC_J,                                        KC_QUOT, KC_COMM, KC_O,    KC_DOT,  KC_K,    SH_OS,
+        XXXXXXX,   KC_X,    KC_P,    KC_L,    KC_C,    KC_J,                                        KC_QUOT, KC_COMM, KC_O,    KC_DOT,  KC_K,    XXXXXXX,
         KC_LALT, HOME_S,  HOME_N,  HOME_R,  HOME_T,  KC_G,                                        KC_Y,    HOME_I,  HOME_E,  HOME_A,  HOME_H,  KC_QUOT,
-        KC_LSFT, KC_F,    MT_RA_W, KC_M,    KC_D,    KC_V,    TG(_NAV),SH_OS,   SH_OS,   TG(_NUM),KC_MINS, KC_U,    KC_Q,    MT_RA_Z, KC_B,    KC_MINS,
+        KC_LSFT, KC_F,    MT_RA_W, KC_M,    KC_D,    KC_V,    TG(_NAV),XXXXXXX,   XXXXXXX,   TG(_NUM),KC_MINS, KC_U,    KC_Q,    MT_RA_Z, KC_B,    KC_MINS,
                                    KC_MUTE, KC_LGUI, TAB_SYM, OSS_NUM, REPEAT,  KC_BSPC, SPC_NAV, SYM_L,   KC_BSPC, KC_MUTE
     ),
 /* ┌──────┬──────┬──────┬──────┬──────┬──────┐                              ┌──────┬──────┬──────┬──────┬──────┬──────┐
@@ -186,28 +186,53 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // update_tri_layer_state(state, _SYM, _NUM, _ADJUST); }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    mod_state         = get_mods();
+    oneshot_mod_state = get_oneshot_mods();
     switch (keycode) {
-        case A_UML:
-            if (record->event.pressed) {
-                SEND_STRING(SS_RALT("u") "a");
+        case MT_AUML:
+            if (record->tap.count > 0) {
+                if (record->event.pressed) {
+                    del_mods(MOD_MASK_SHIFT);
+                    del_oneshot_mods(MOD_MASK_SHIFT);
+                    tap_code16(RALT(KC_U));
+                    set_mods(mod_state);
+                    set_oneshot_mods(oneshot_mod_state);
+                    tap_code(KC_A);
+                }
                 return false;
             }
             break;
         case O_UML:
             if (record->event.pressed) {
-                SEND_STRING(SS_RALT("u") "o");
+                del_mods(MOD_MASK_SHIFT);
+                del_oneshot_mods(MOD_MASK_SHIFT);
+                tap_code16(RALT(KC_U));
+                set_mods(mod_state);
+                set_oneshot_mods(oneshot_mod_state);
+                tap_code(KC_O);
                 return false;
             }
             break;
         case U_UML:
             if (record->event.pressed) {
-                SEND_STRING(SS_RALT("u") "u");
+                del_mods(MOD_MASK_SHIFT);
+                del_oneshot_mods(MOD_MASK_SHIFT);
+                tap_code16(RALT(KC_U));
+                set_mods(mod_state);
+                set_oneshot_mods(oneshot_mod_state);
+                tap_code(KC_U);
                 return false;
             }
             break;
-        case ESZETT:
-            if (record->event.pressed) {
-                SEND_STRING(SS_RALT("s"));
+        case MT_ESZT:
+            if (record->tap.count > 0) {
+                if (record->event.pressed) {
+                    del_mods(MOD_MASK_SHIFT);
+                    del_oneshot_mods(MOD_MASK_SHIFT);
+                    tap_code16(RALT(KC_S));
+                    set_mods(mod_state);
+                    set_oneshot_mods(oneshot_mod_state);
+                }
                 return false;
             }
             break;
