@@ -1,0 +1,5 @@
+//   name          result    chord keys
+COMB(OSSCW_ESC,    KC_ESC,   OSS_NUM , CAPS_WORD)
+COMB(REPNAV_CL,    KC_CAPS,  REP_ADJ , TG(_NAV))
+COMB(BSPNUM_DEL,   KC_DEL,   BSP_FUN, TG(_NUM))
+COMB(SPCTAB_ENT,   KC_ENT,   SPC_NAV, KC_TAB)

@@ -61,5 +61,4 @@
 #define TAP_CODE_DELAY 10
 
 // number of combos used and combo timeout
-#define COMBO_COUNT 1
 #define COMBO_TERM 60

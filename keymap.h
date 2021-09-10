@@ -15,10 +15,12 @@ void caps_word_disable(void);
 enum layers { _OK = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
 
 // Layer keys
+#define TAB_SYM LT(_SYM_R, KC_TAB)
 #define OSS_NUM LT(_NUM, OSS)
+#define REP_ADJ LT(_ADJUST, REPEAT)
+#define BSP_FUN LT(_FUN, KC_BSPC)
 #define SPC_NAV LT(_NAV, KC_SPACE)
 #define SYM_L MO(_SYM_L)
-#define TAB_SYM LT(_SYM_R, KC_TAB)
 
 // Miscellaneous keyboard shortcuts in direct access
 #define UNDO LCTL(KC_Z)
