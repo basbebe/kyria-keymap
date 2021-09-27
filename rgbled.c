@@ -23,6 +23,10 @@ const rgblight_segment_t PROGMEM _RGB_SYM_R[] = RGBLIGHT_LAYER_SEGMENTS({10, 10,
 const rgblight_segment_t PROGMEM _RGB_NUM[] = RGBLIGHT_LAYER_SEGMENTS({10, 10, HSV_YELLOW}
 );
 
+// Light LEDs 11 to 20 when NUM is active
+const rgblight_segment_t PROGMEM _RGB_NAV[] = RGBLIGHT_LAYER_SEGMENTS({0, 10, HSV_BLUE}
+);
+
 // Now define the array of layers. Later layers take precedence
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     _RGB_CAPS_LOCK,
@@ -30,7 +34,8 @@ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     _RGB_QWERTY,
     _RGB_SYM_L,
     _RGB_SYM_R,
-    _RGB_NUM
+    _RGB_NUM,
+    _RGB_NAV
 );
 
 void keyboard_post_init_user(void) {
@@ -52,5 +57,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(3, layer_state_cmp(state, _SYM_L));
     rgblight_set_layer_state(4, layer_state_cmp(state, _SYM_R));
     rgblight_set_layer_state(5, layer_state_cmp(state, _NUM));
+    rgblight_set_layer_state(6, layer_state_cmp(state, _NAV));
     return state;
 }
