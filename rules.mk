@@ -26,6 +26,9 @@ endif
 ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
     SRC += tapdance.c
 endif
+ifeq ($(strip $(KEY_OVERRIDE_ENABLE)), yes)
+    SRC += overrides.c
+endif
 ifeq ($(strip $(SWAP_HANDS_ENABLE)), yes)
     SRC += swap_hand.c
 endif
