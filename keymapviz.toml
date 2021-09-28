@@ -26,8 +26,8 @@ KC_MINS = - _
 KC_EQL = =
 U_SL = /
 KC_SLSH = /
-KC_COMM = ,
-KC_DOT = .
+KC_COMM = , –
+KC_DOT = . •
 KC_ASTR = *
 KC_BSLS = \
 KC_BSLASH = \
@@ -157,6 +157,9 @@ MT_ESZT = ß/⎈
 ELLIPS = …
 EURO = €
 MT_EURO = €/⇧
+BULLET = •
+ENDASH = –
+PARAGPH = §
 
 ARROW_R = -> =>
 

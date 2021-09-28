@@ -67,7 +67,10 @@ enum custom_keycodes {
     ESZETT,
     // Symbols
     ELLIPS,
-    EURO
+    EURO,
+    BULLET,
+    ENDASH,
+    PARAGPH
 };
 
 // Tap Dance keycodes
