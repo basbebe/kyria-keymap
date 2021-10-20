@@ -37,7 +37,7 @@
 #    define RGBLIGHT_SLEEP
 #    define RGBLIGHT_SPLIT
 #    define RGBLIGHT_LAYERS
-#    define RGBLIGHT_LAYER_BLINK
+// #    define RGBLIGHT_LAYER_BLINK
 #endif
 
 // EC11K encoders have a different resolution than other EC11 encoders.
