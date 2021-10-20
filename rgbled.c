@@ -3,7 +3,7 @@
 
 const rgblight_segment_t PROGMEM _RGB_CAPS_LOCK[] = RGBLIGHT_LAYER_SEGMENTS({0, 10, HSV_PURPLE});
 
-const rgblight_segment_t PROGMEM _RGB_OK[] = RGBLIGHT_LAYER_SEGMENTS({0, 10, HSV_PURPLE});
+const rgblight_segment_t PROGMEM _RGB_BASE[] = RGBLIGHT_LAYER_SEGMENTS({0, 10, HSV_PURPLE});
 
 const rgblight_segment_t PROGMEM _RGB_QWERTY[] = RGBLIGHT_LAYER_SEGMENTS({0, 10, HSV_PURPLE});
 
@@ -20,7 +20,7 @@ const rgblight_segment_t PROGMEM _RGB_NUM[] = RGBLIGHT_LAYER_SEGMENTS({10, 10, H
 const rgblight_segment_t PROGMEM _RGB_NAV[] = RGBLIGHT_LAYER_SEGMENTS({0, 10, HSV_BLUE});
 
 // Now define the array of layers. Later layers take precedence
-const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(_RGB_CAPS_LOCK, _RGB_OK, _RGB_QWERTY, _RGB_SYM_L, _RGB_SYM_R, _RGB_NUM, _RGB_NAV);
+const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(_RGB_CAPS_LOCK, _RGB_BASE, _RGB_QWERTY, _RGB_SYM_L, _RGB_SYM_R, _RGB_NUM, _RGB_NAV);
 
 void keyboard_post_init_user(void) {
     rgblight_enable_noeeprom();  // Enables RGB, without saving settings
@@ -35,7 +35,7 @@ void keyboard_post_init_user(void) {
 // }
 
 // layer_state_t default_layer_state_set_user(layer_state_t state) {
-//     rgblight_set_layer_state(1, layer_state_cmp(state, _RGB_OK));
+//     rgblight_set_layer_state(1, layer_state_cmp(state, _RGB_BASE));
 //     return state;
 // }
 

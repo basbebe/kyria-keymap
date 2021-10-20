@@ -35,7 +35,7 @@ static void render_status(void) {
     // Host Keyboard Layer Status
     oled_write_P(PSTR("Layer: "), false);
     switch (get_highest_layer(layer_state)) {
-        case _OK:
+        case _BASE:
             oled_write_P(PSTR("Default\n"), false);
             break;
         case _QWERTY:

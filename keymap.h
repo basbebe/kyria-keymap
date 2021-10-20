@@ -12,7 +12,9 @@ bool caps_word_on;
 void caps_word_enable(void);
 void caps_word_disable(void);
 
-enum layers { _OK = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
+enum layers { _BASE = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
+
+#define REPEAT KC_F22
 
 // Layer keys
 #define TAB_SYM LT(_SYM_R, KC_TAB)
@@ -20,16 +22,19 @@ enum layers { _OK = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
 #define REP_ADJ LT(_ADJUST, REPEAT)
 #define BSP_FUN LT(_FUN, KC_BSPC)
 #define SPC_NAV LT(_NAV, KC_SPACE)
-#define SYM_L MO(_SYM_L)
+#define SYM_L OSL(_SYM_L)
+#define SYM_R OSL(_SYM_R)
+#define NUM OSL(_NUM)
+#define NAV OSL(_NAV)
 
 // Miscellaneous keyboard shortcuts in direct access
 #define UNDO LCTL(KC_Z)
 #define REDO LCTL(KC_Y)
 
 // Left-hand home row mods
-#define HOME_S LCTL_T(KC_S)
-#define HOME_N LALT_T(KC_N)
-#define HOME_R LSFT_T(KC_R)
+#define HOME_R LCTL_T(KC_R)
+#define HOME_S LALT_T(KC_S)
+#define HOME_N LSFT_T(KC_N)
 #define HOME_T LGUI_T(KC_T)
 
 // Right-hand home row mods
@@ -58,7 +63,6 @@ enum layers { _OK = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
 // Custom Keycodes
 enum custom_keycodes {
     CAPS_WORD = SAFE_RANGE,
-    REPEAT,
     OSS,
     // German Umlauts
     A_UML,

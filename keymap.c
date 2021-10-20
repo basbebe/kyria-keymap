@@ -21,11 +21,11 @@
 #include "g/keymap_combo.h"
 
 /* ┌──────┬──────┬──────┬──────┬──────┬──────┐                              ┌──────┬──────┬──────┬──────┬──────┬──────┐
- * │      │  X   │  P   │  L   │  C   │  J   │                              │ ' "  │  ,   │  O   │  .   │  K   │      │
+ * │      │  J   │  F   │  L   │  C   │  B   │                              │ - _  │  Y   │  O   │ , –  │  Q   │      │
  * ├──────┼──────┼──────┼──────┼──────┼──────┤                              ├──────┼──────┼──────┼──────┼──────┼──────┤
- * │LALT ⎇│ S/⎈  │ N/⎇  │ R/⇧  │ T/◆  │  G   │                              │  Y   │ I/◆  │ E/⇧  │ A/⎇  │ H/⎈  │ ' "  │
+ * │LALT ⎇│ R/⇧  │ S/⎈  │ N/⎇  │ T/◆  │  G   │                              │ ' "  │ I/◆  │ E/⇧  │ A/⎇  │ H/⎈  │ ' "  │
  * ├──────┼──────┼──────┼──────┼──────┼──────┼──────┬──────┐  ┌──────┬──────┼──────┼──────┼──────┼──────┼──────┼──────┤
- * │LSFT ⇧│  F   │W/AltG│  M   │  D   │  V   │CAPS_W│TG(_NA│  │TG(_NU│ TAB  │ - _  │  U   │  Q   │Z/AltG│  B   │ - _  │
+ * │LSFT ⇧│  V   │W/AltG│  M   │  D   │  P   │CAPS_W│ NAV  │  │ NUM  │ TAB  │  X   │  U   │ . •  │Z/AltG│  K   │ - _  │
  * └──────┴──────┴──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┴──────┴──────┘
  *                      │ MUTE │LGUI ◆│TAB_SY│OSS_NU│REP_AD│  │BSP_FU│SPC_NA│SYM_L │ BSPC │ MUTE │
  *                      │      │      │      │      │      │  │      │      │      │      │      │
@@ -34,10 +34,10 @@
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_OK] = LAYOUT(
-        XXXXXXX,   KC_X,    KC_P,    KC_L,    KC_C,    KC_J,                                        KC_QUOT, KC_COMM, KC_O,    KC_DOT,  KC_K,    XXXXXXX,
-        KC_LALT, HOME_S,  HOME_N,  HOME_R,  HOME_T,  KC_G,                                        KC_Y,    HOME_I,  HOME_E,  HOME_A,  HOME_H,  KC_QUOT,
-        KC_LSFT, KC_F,    MT_RA_W, KC_M,    KC_D,    KC_V,  CAPS_WORD,TG(_NAV), TG(_NUM),KC_TAB,  KC_MINS, KC_U,    KC_Q,    MT_RA_Z, KC_B,    KC_MINS,
+    [_BASE] = LAYOUT(
+        XXXXXXX, KC_J,    KC_F,    KC_L,    KC_C,    KC_B,                                        KC_MINS, KC_Y,    KC_O,    KC_COMM, KC_Q,    XXXXXXX,
+        KC_LALT, HOME_R,  HOME_S,  HOME_N,  HOME_T,  KC_G,                                        KC_QUOT, HOME_I,  HOME_E,  HOME_A,  HOME_H,  KC_QUOT,
+        KC_LSFT, KC_V,    MT_RA_W, KC_M,    KC_D,    KC_P,  CAPS_WORD, NAV,     NUM,     KC_TAB,  KC_X,    KC_U,    KC_DOT,  MT_RA_Z, KC_K,    KC_MINS,
                                    KC_MUTE, KC_LGUI, TAB_SYM, OSS_NUM, REP_ADJ, BSP_FUN, SPC_NAV, SYM_L,   KC_BSPC, KC_MUTE
     ),
 /* ┌──────┬──────┬──────┬──────┬──────┬──────┐                              ┌──────┬──────┬──────┬──────┬──────┬──────┐
@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ├──────┼──────┼──────┼──────┼──────┼──────┤                              ├──────┼──────┼──────┼──────┼──────┼──────┤
  * │MT(MOD│  A   │  S   │  D   │  F   │  G   │                              │  H   │  J   │  K   │  L   │  ;   │ ' "  │
  * ├──────┼──────┼──────┼──────┼──────┼──────┼──────┬──────┐  ┌──────┬──────┼──────┼──────┼──────┼──────┼──────┼──────┤
- * │LSFT ⇧│  Z   │  X   │  C   │  V   │  B   │LSFT ⇧│LSFT ⇧│  │LSFT ⇧│LSFT ⇧│  N   │  M   │  ,   │  .   │  /   │ - _  │
+ * │LSFT ⇧│  Z   │  X   │  C   │  V   │  B   │LSFT ⇧│LSFT ⇧│  │LSFT ⇧│LSFT ⇧│  N   │  M   │ , –  │ . •  │  /   │ - _  │
  * └──────┴──────┴──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┴──────┴──────┘
  *                      │      │      │      │      │      │  │      │      │      │      │      │
  *                      │      │      │      │      │      │  │      │      │      │      │      │
@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ├──────┼──────┼──────┼──────┼──────┼──────┤                              ├──────┼──────┼──────┼──────┼──────┼──────┤
  * │      │ ß/⎈  │LALT ⎇│LSFT ⇧│LGUI ◆│      │                              │  ?   │  (   │  )   │      │  :   │      │
  * ├──────┼──────┼──────┼──────┼──────┼──────┼──────┬──────┐  ┌──────┬──────┼──────┼──────┼──────┼──────┼──────┼──────┤
- * │      │      │      │      │      │      │      │      │  │      │      │  +   │  %   │      │      │  ;   │      │
+ * │      │      │      │      │      │      │      │      │  │      │      │  +   │  %   │      │  §   │  ;   │      │
  * └──────┴──────┴──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┴──────┴──────┘
  *                      │      │      │      │      │      │  │      │  _   │      │      │      │
  *                      │      │      │      │      │      │  │      │      │      │      │      │
@@ -215,15 +215,12 @@ void process_caps_word(uint16_t keycode, const keyrecord_t *record) {
             // Keycodes that enable caps word but shouldn't get shifted
             case KC_MINS:
             case KC_BSPC:
-            case BSP_FUN:
             case KC_UNDS:
             case KC_PIPE:
-            case REP_ADJ:
             case REPEAT:
             case CAPS_WORD:
             case OS_LSFT:
             case OS_RSFT:
-            case OSS_NUM:
                 // If chording mods, disable caps word
                 if (record->event.pressed && (get_mods() != MOD_LSFT) && (get_mods() != 0)) {
                     caps_word_disable();
