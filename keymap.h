@@ -12,7 +12,7 @@ bool caps_word_on;
 void caps_word_enable(void);
 void caps_word_disable(void);
 
-enum layers { _BASE = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
+enum layers { _BASE = 0, _QWERTY, _SYM, _NUM, _NAV, _FUN, _ADJUST };
 
 #define REPEAT KC_F22
 
@@ -22,8 +22,7 @@ enum layers { _BASE = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
 #define REP_ADJ LT(_ADJUST, REPEAT)
 #define BSP_FUN LT(_FUN, KC_BSPC)
 #define SPC_NAV LT(_NAV, KC_SPACE)
-#define SYM_L OSL(_SYM_L)
-#define SYM_R OSL(_SYM_R)
+#define SYM OSL(_SYM)
 #define NUM OSL(_NUM)
 #define NAV OSL(_NAV)
 
@@ -32,9 +31,9 @@ enum layers { _BASE = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
 #define REDO LCTL(KC_Y)
 
 // Left-hand home row mods
-#define HOME_R LCTL_T(KC_R)
-#define HOME_S LALT_T(KC_S)
-#define HOME_N LSFT_T(KC_N)
+#define HOME_S LCTL_T(KC_S)
+#define HOME_N LALT_T(KC_N)
+#define HOME_R LSFT_T(KC_R)
 #define HOME_T LGUI_T(KC_T)
 
 // Right-hand home row mods
@@ -43,18 +42,26 @@ enum layers { _BASE = 0, _QWERTY, _SYM_L, _SYM_R, _NUM, _NAV, _FUN, _ADJUST };
 #define HOME_A LALT_T(KC_A)
 #define HOME_H RCTL_T(KC_H)
 
+// Mod Tap Right Alt
+#define MT_RA_CM RALT_T(KC_COMM)
+#define MT_RA_M RALT_T(KC_M)
+
 // Sym layer mod Taps
 #define MT_AUML LALT_T(A_UML)
 #define MT_EURO RSFT_T(EURO)
 #define MT_ESZT LCTL_T(ESZETT)
 
-// Mod Tap Right Alt
-#define MT_RA_Z RALT_T(KC_Z)
-#define MT_RA_W RALT_T(KC_W)
-
-// One Shot Shifts
+// One Shot Mods
+#define OS_LCTL OSM(MOD_LCTL)
 #define OS_LSFT OSM(MOD_LSFT)
+#define OS_LALT OSM(MOD_LALT)
+#define OS_LGUI OSM(MOD_LGUI)
+#define OS_RCTL OSM(MOD_RCTL)
 #define OS_RSFT OSM(MOD_RSFT)
+#define OS_RALT OSM(MOD_RALT)
+#define OS_RGUI OSM(MOD_RGUI)
+#define OS_HYPR OSM(MOD_HYPR)
+#define OS_MEH  OSM(MOD_MEH)
 
 // Symbols
 // #define MT_AUML TD(TD_AUML)

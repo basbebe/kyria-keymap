@@ -55,9 +55,16 @@
 #define TAPPING_TERM 175
 #define IGNORE_MOD_TAP_INTERRUPT
 #define TAPPING_FORCE_HOLD
+#define TAPPING_FORCE_HOLD_PER_KEY
 
 // Allows media codes to properly register in macros and rotary encoder code
 #define TAP_CODE_DELAY 10
 
 // number of combos used and combo timeout
-#define COMBO_TERM 60
+#define COMBO_TERM 40
+
+// one shot modifiers
+// tap 2 times to hold
+// released after 3 seconds
+#define ONESHOT_TAP_TOGGLE 2
+#define ONESHOT_TIMEOUT 3000
