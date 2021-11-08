@@ -12,7 +12,7 @@ CONSOLE_ENABLE = no        # Console for debug
 COMMAND_ENABLE = no        # Commands for debug and configuration
 UNICODE_ENABLE = no        # Unicode
 UNICODEMAP_ENABLE = no     # Extended Unicode range
-SWAP_HANDS_ENABLE = no     # Swap hands
+SWAP_HANDS_ENABLE = yes    # Swap hands
 WPM_ENABLE = yes           # WPM Calculation
 TAP_DANCE_ENABLE = no      # Enables Tab Dance
 LTO_ENABLE = yes           # Enables Link Time Optimization to minimize FW size
@@ -20,24 +20,20 @@ LTO_ENABLE = yes           # Enables Link Time Optimization to minimize FW size
 # Load the necessary external C files if and only if
 # the associated config option has been enabled
 ifeq ($(strip $(COMBO_ENABLE)), yes)
-    VPATH += keyboards/gboards
-    # SRC += combos.c
+	VPATH += keyboards/gboards
 endif
 ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
-    SRC += tapdance.c
+	SRC += tapdance.c
 endif
 ifeq ($(strip $(KEY_OVERRIDE_ENABLE)), yes)
-    SRC += overrides.c
-endif
-ifeq ($(strip $(SWAP_HANDS_ENABLE)), yes)
-    SRC += swap_hand.c
+	SRC += overrides.c
 endif
 ifeq ($(strip $(RGBLIGHT_ENABLE)), yes)
-	  SRC += rgbled.c
+	SRC += rgbled.c
 endif
 ifeq ($(strip $(OLED_ENABLE)), yes)
-	  SRC += oled.c
+	SRC += oled.c
 endif
 ifeq ($(strip $(ENCODER_ENABLE)), yes)
-	  SRC += encoder.c
+	SRC += encoder.c
 endif

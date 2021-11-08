@@ -12,6 +12,9 @@ bool caps_word_on;
 void caps_word_enable(void);
 void caps_word_disable(void);
 
+bool is_gui_tab_active;
+uint16_t gui_alt_timer;
+
 enum layers { _BASE = 0, _QWERTY, _SYM, _NUM, _NAV, _FUN, _ADJUST };
 
 #define REPEAT KC_F22

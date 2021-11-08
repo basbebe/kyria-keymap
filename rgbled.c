@@ -7,7 +7,7 @@ const rgblight_segment_t PROGMEM _RGB_BASE[] = RGBLIGHT_LAYER_SEGMENTS({0, 10, H
 
 const rgblight_segment_t PROGMEM _RGB_QWERTY[] = RGBLIGHT_LAYER_SEGMENTS({0, 10, HSV_PURPLE});
 
-const rgblight_segment_t PROGMEM _RGB_SYM[] = RGBLIGHT_LAYER_SEGMENTS({0, 10, HSV_PURPLE});
+const rgblight_segment_t PROGMEM _RGB_SYM[] = RGBLIGHT_LAYER_SEGMENTS({0, 20, HSV_PURPLE});
 
 // Light LEDs 11 to 20 when NUM is active
 const rgblight_segment_t PROGMEM _RGB_NUM[] = RGBLIGHT_LAYER_SEGMENTS({10, 10, HSV_YELLOW});
