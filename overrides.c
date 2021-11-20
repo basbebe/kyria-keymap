@@ -8,7 +8,7 @@ const key_override_t space_key_override = ko_make_with_layers(MOD_MASK_SHIFT, SP
 // Shift + Dot -> Bullet
 const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, RALT(KC_8));
 // Shift + Comma -> En-Dash
-const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, RALT(KC_MINUS));
+const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, MT_RA_CM, RALT(KC_MINUS));
 
 // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
