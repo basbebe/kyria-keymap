@@ -12,7 +12,7 @@ bool caps_word_on;
 void caps_word_enable(void);
 void caps_word_disable(void);
 
-bool is_gui_tab_active;
+bool     is_gui_tab_active;
 uint16_t gui_alt_timer;
 
 enum layers { _BASE = 0, _QWERTY, _SYM, _NUM, _NAV, _FUN, _ADJUST };
@@ -20,18 +20,23 @@ enum layers { _BASE = 0, _QWERTY, _SYM, _NUM, _NAV, _FUN, _ADJUST };
 #define REPEAT KC_F22
 
 // Layer keys
-#define TAB_SYM LT(_SYM_R, KC_TAB)
-#define OSS_NUM LT(_NUM, OSS)
-#define REP_ADJ LT(_ADJUST, REPEAT)
-#define BSP_FUN LT(_FUN, KC_BSPC)
-#define SPC_NAV LT(_NAV, KC_SPACE)
+#define SYM_TAB LT(_SYM, KC_TAB)
+#define NUM_OSS LT(_NUM, OSS)
+#define SYM_REP LT(_SYM, REPEAT)
+#define SYM_BSP LT(_FUN, KC_BSPC)
+#define NAV_SPC LT(_NAV, KC_SPACE)
+#define SYM_ENT LT(_SYM, KC_BSPC)
 #define SYM OSL(_SYM)
 #define NUM OSL(_NUM)
 #define NAV OSL(_NAV)
+#define FUN OSL(_FUN)
 
 // Miscellaneous keyboard shortcuts in direct access
-#define UNDO LCTL(KC_Z)
-#define REDO LCTL(KC_Y)
+#define UNDO LGUI(KC_Z)
+#define COPY LGUI(KC_C)
+#define PASTE LGUI(KC_V)
+#define CL_WIN LGUI(KC_W)
+#define CL_APP LGUI(KC_Q)
 
 // Left-hand home row mods
 #define HOME_S LCTL_T(KC_S)
@@ -49,11 +54,6 @@ enum layers { _BASE = 0, _QWERTY, _SYM, _NUM, _NAV, _FUN, _ADJUST };
 #define MT_RA_CM RALT_T(KC_COMM)
 #define MT_RA_M RALT_T(KC_M)
 
-// Sym layer mod Taps
-#define MT_AUML LALT_T(A_UML)
-#define MT_EURO RSFT_T(EURO)
-#define MT_ESZT LCTL_T(ESZETT)
-
 // One Shot Mods
 #define OS_LCTL OSM(MOD_LCTL)
 #define OS_LSFT OSM(MOD_LSFT)
@@ -64,11 +64,7 @@ enum layers { _BASE = 0, _QWERTY, _SYM, _NUM, _NAV, _FUN, _ADJUST };
 #define OS_RALT OSM(MOD_RALT)
 #define OS_RGUI OSM(MOD_RGUI)
 #define OS_HYPR OSM(MOD_HYPR)
-#define OS_MEH  OSM(MOD_MEH)
-
-// Symbols
-// #define MT_AUML TD(TD_AUML)
-// #define MT_ESZT TD(TD_ESZT)
+#define OS_MEH OSM(MOD_MEH)
 
 // Custom Keycodes
 enum custom_keycodes {

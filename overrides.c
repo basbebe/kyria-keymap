@@ -2,9 +2,9 @@
 #include "keymap.h"
 
 // Shift + Backspace -> Delete
-const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, BSP_FUN, KC_DELETE);
+const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, SYM_BSP, KC_DELETE);
 // Shift + Space -> Underscore, only on layers 0 and 1
-const key_override_t space_key_override = ko_make_with_layers(MOD_MASK_SHIFT, SPC_NAV, KC_UNDERSCORE, (1UL << _BASE) | (1UL << _QWERTY));
+const key_override_t space_key_override = ko_make_with_layers(MOD_MASK_SHIFT, NAV_SPC, KC_UNDERSCORE, (1UL << _BASE) | (1UL << _QWERTY));
 // Shift + Dot -> Bullet
 const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, RALT(KC_8));
 // Shift + Comma -> En-Dash

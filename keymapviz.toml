@@ -1,7 +1,5 @@
 [legends]
-U_EXLM = !
 KC_EXLM = !
-U_QUES = ?
 KC_QUES = ?
 KC_GT = >
 KC_LT = <
@@ -24,7 +22,6 @@ KC_AMPR = &
 KC_UNDS = _
 KC_MINS = - _
 KC_EQL = =
-U_SL = /
 KC_SLSH = /
 KC_COMM = , –
 KC_DOT = . •
@@ -135,15 +132,10 @@ HOME_Z = Z
 MT_RA_W = W/AltGr
 MT_RA_Z = Z/AltGr
 
-CTL_ESC = ESC/⎈
-CTL_QUOT= ' "/⎈
-ALT_ENT = ⏎ /⎇
-KC_APP = MENU
-
-NAV_TAB = TAB/NAV
-MS_CAPS = CAPS/MS
 SYM_ENT = ⏎/SYM
-NAV_UND = _/NAV
+NAV_SPC = ␣/NAV
+SYM_TAB = ⇆/SYM
+NUM_OSS = ⇧/NUM
 
 OS_LCTL = OS-⎈
 OS_LSFT = OS-⇧
@@ -157,71 +149,13 @@ OS_HYPR = OS-HYPR
 OS_MEH  = OS-MEH
 
 A_UML = Ä
-MT_AUML = Ä/⎇
 O_UML = Ö
 U_UML = Ü
 ESZETT = ß
-MT_ESZT = ß/⎈
 ELLIPS = …
 EURO = €
-MT_EURO = €/⇧
 BULLET = •
 ENDASH = –
 PARAGPH = §
 
-ARROW_R = -> =>
-
-GUILL_R = »
-GUILL_L = «
-UPDIR = ../
-E_GRAVE = È
-A_GRAVE = À
-YICODE = $yi{
-O_BRACE = {⏎
-C_BRACE = }⏎
-
-TD_DOT = . >
-
-NK_ON = NKROon
-NK_OFF = NKROoff
-
-STN_N1 = #1
-STN_N2 = #2
-STN_N3 = #3
-STN_N4 = #4
-STN_N5 = #5
-STN_N6 = #6
-STN_N7 = #7
-STN_N8 = #8
-STN_N9 = #9
-STN_NA = NA
-STN_S1 = S1
-STN_TL = T-
-STN_PL = P-
-STN_HL = H-
-STN_ST1 = *1
-STN_ST3 = *3
-STN_FR = -F
-STN_PR = -P
-STN_LR = -L
-STN_TR = -T
-STN_DR = -D
-STN_S2 = S2
-STN_KL = K-
-STN_WL = W-
-STN_RL = R- 
-STN_ST2 = *2
-STN_ST4 = *4
-STN_RR = -R
-STN_BR = -B
-STN_GR = -G
-STN_SR = -S
-STN_ZR = -Z
-STN_A = A-
-STN_O = O-
-STN_E = -E
-STN_U = -U
-
 SH_OS = SWAPHNDS
-OSS_SYM = OSS
-SPC_SYM = ⍽
