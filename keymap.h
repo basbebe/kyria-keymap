@@ -15,7 +15,7 @@ void caps_word_disable(void);
 bool     is_gui_tab_active;
 uint16_t gui_alt_timer;
 
-enum layers { _BASE = 0, _QWERTY, _SYM, _NUM, _NAV, _FUN, _ADJUST };
+enum layers { _BASE = 0, _QWERTY, _SYM, _NUM, _NAV, _FUN };
 
 #define REPEAT KC_F22
 
@@ -25,7 +25,7 @@ enum layers { _BASE = 0, _QWERTY, _SYM, _NUM, _NAV, _FUN, _ADJUST };
 #define SYM_REP LT(_SYM, REPEAT)
 #define SYM_BSP LT(_FUN, KC_BSPC)
 #define NAV_SPC LT(_NAV, KC_SPACE)
-#define SYM_ENT LT(_SYM, KC_BSPC)
+#define SYM_ENT LT(_SYM, KC_ENT)
 #define SYM OSL(_SYM)
 #define NUM OSL(_NUM)
 #define NAV OSL(_NAV)
