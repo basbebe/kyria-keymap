@@ -52,7 +52,7 @@ enum layers { _BASE = 0, _QWERTY, _SYM, _NUM, _NAV, _FUN };
 
 // Mod Tap Right Alt
 #define MT_RA_CM RALT_T(KC_COMM)
-#define MT_RA_M RALT_T(KC_M)
+#define MT_RA_F RALT_T(KC_F)
 
 // One Shot Mods
 #define OS_LCTL OSM(MOD_LCTL)

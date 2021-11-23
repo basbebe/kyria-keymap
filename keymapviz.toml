@@ -20,7 +20,7 @@ KC_TILD = ~
 KC_PLUS = +
 KC_AMPR = &
 KC_UNDS = _
-KC_MINS = - _
+KC_MINS = - /
 KC_EQL = =
 KC_SLSH = /
 KC_COMM = , –
