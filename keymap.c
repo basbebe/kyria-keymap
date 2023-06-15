@@ -21,7 +21,7 @@
 #include "g/keymap_combo.h"
 
 /* ┌──────┬──────┬──────┬──────┬──────┬──────┐                              ┌──────┬──────┬──────┬──────┬──────┬──────┐
- * │      │  J   │  W   │  M   │  G   │  P   │                              │  X   │  Y   │ ' "  │ . •  │  Q   │      │
+ * │TG(NAV│  J   │  W   │  M   │  G   │  P   │                              │  X   │  Y   │ ' "  │ . •  │  Q   │TG(NUM│
  * ├──────┼──────┼──────┼──────┼──────┼──────┤                              ├──────┼──────┼──────┼──────┼──────┼──────┤
  * │ OS-⎈ │ S/⎈  │ N/⎇  │ R/⇧  │ T/◆  │  C   │                              │  K   │ I/◆  │ E/⇧  │ A/⎇  │ H/⎈  │ OS-⎈ │
  * ├──────┼──────┼──────┼──────┼──────┼──────┼──────┬──────┐  ┌──────┬──────┼──────┼──────┼──────┼──────┼──────┼──────┤
@@ -35,7 +35,7 @@
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
-        XXXXXXX, KC_J,    KC_W,    KC_M,    KC_G,    KC_P,                                          KC_X,    KC_Y,    KC_QUOT, KC_DOT,  KC_Q,    XXXXXXX,
+        TG(NAV), KC_J,    KC_W,    KC_M,    KC_G,    KC_P,                                          KC_X,    KC_Y,    KC_QUOT, KC_DOT,  KC_Q,    TG(NUM),
         OS_LCTL, HOME_S,  HOME_N,  HOME_R,  HOME_T,  KC_C,                                          KC_K,    HOME_I,  HOME_E,  HOME_A,  HOME_H,  OS_RCTL,
         OS_LGUI, KC_V,    MT_RA_F, KC_L,    KC_D,    KC_B,    CW_TOGG,   SH_OS,   SH_OS,   KC_ESC,  KC_MINS, KC_U,    KC_O,    MT_RA_CM,KC_Z,    OS_RGUI,
                                    KC_MUTE, KC_ESC,  SYM_TAB, NUM_OSS,   SYM_REP, SYM_BSP, NAV_SPC, SYM_ENT, FUN,     KC_MUTE
