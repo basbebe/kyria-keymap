@@ -6,7 +6,6 @@
 // representation of active modifiers.
 uint8_t  mod_state;
 uint8_t  oneshot_mod_state;
-uint16_t last_keycode;
 
 bool     is_gui_tab_active;
 uint16_t gui_alt_timer;
@@ -26,23 +25,23 @@ enum layers { _BASE = 0, _QWERTY, _SYM, _NUM, _NAV, _FUN };
 #define FUN OSL(_FUN)
 
 // Miscellaneous keyboard shortcuts in direct access
-#define UNDO LGUI(KC_Z)
-#define COPY LGUI(KC_C)
-#define PASTE LGUI(KC_V)
-#define CL_WIN LGUI(KC_W)
-#define CL_APP LGUI(KC_Q)
+// #define UNDO LGUI(KC_Z)
+// #define COPY LGUI(KC_C)
+// #define PASTE LGUI(KC_V)
+// #define CL_WIN LGUI(KC_W)
+// #define CL_APP LGUI(KC_Q)
 
 // Left-hand home row mods
-#define HOME_S LCTL_T(KC_S)
+#define HOME_S LGUI_T(KC_S)
 #define HOME_N LALT_T(KC_N)
 #define HOME_R LSFT_T(KC_R)
-#define HOME_T LGUI_T(KC_T)
+#define HOME_T LCTL_T(KC_T)
 
 // Right-hand home row mods
-#define HOME_I RGUI_T(KC_I)
+#define HOME_I RCTL_T(KC_I)
 #define HOME_E RSFT_T(KC_E)
 #define HOME_A LALT_T(KC_A)
-#define HOME_H RCTL_T(KC_H)
+#define HOME_H RGUI_T(KC_H)
 
 // Mod Tap Right Alt
 #define MT_RA_CM RALT_T(KC_COMM)
