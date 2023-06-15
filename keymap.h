@@ -8,10 +8,6 @@ uint8_t  mod_state;
 uint8_t  oneshot_mod_state;
 uint16_t last_keycode;
 
-bool caps_word_on;
-void caps_word_enable(void);
-void caps_word_disable(void);
-
 bool     is_gui_tab_active;
 uint16_t gui_alt_timer;
 
@@ -68,8 +64,7 @@ enum layers { _BASE = 0, _QWERTY, _SYM, _NUM, _NAV, _FUN };
 
 // Custom Keycodes
 enum custom_keycodes {
-    CAPS_WORD = SAFE_RANGE,
-    OSS,
+    OSS = SAFE_RANGE,
     // German Umlauts
     A_UML,
     O_UML,
