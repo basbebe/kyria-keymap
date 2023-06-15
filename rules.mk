@@ -8,7 +8,7 @@ REPEAT_KEY_ENABLE = yes
 
 BOOTMAGIC_ENABLE = no      # Virtual DIP switch configuration
 MOUSEKEY_ENABLE = no       # Mouse keys
-COMBO_ENABLE = yes         # Enable Combos
+# COMBO_ENABLE = yes         # Enable Combos
 KEY_OVERRIDE_ENABLE = yes  # Enable Key Overrides
 EXTRAKEY_ENABLE = yes      # Audio control and System control
 CONSOLE_ENABLE = no        # Console for debug
@@ -22,9 +22,6 @@ LTO_ENABLE = yes           # Enables Link Time Optimization to minimize FW size
 
 # Load the necessary external C files if and only if
 # the associated config option has been enabled
-ifeq ($(strip $(COMBO_ENABLE)), yes)
-	VPATH += keyboards/gboards
-endif
 ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
 	SRC += tapdance.c
 endif
