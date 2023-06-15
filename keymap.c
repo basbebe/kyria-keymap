@@ -250,21 +250,3 @@ bool get_combo_must_tap(uint16_t index, combo_t *combo) {
             return true;
     }
 }
-
-bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case HOME_S:
-        case HOME_N:
-        case HOME_R:
-        case HOME_T:
-        case HOME_I:
-        case HOME_E:
-        case HOME_A:
-        case HOME_H:
-        case MT_RA_F:
-        case MT_RA_CM:
-            return true;
-        default:
-            return false;
-    }
-}

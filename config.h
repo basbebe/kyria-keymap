@@ -53,8 +53,6 @@
 
 // default is 200
 #define TAPPING_TERM 175
-#define TAPPING_FORCE_HOLD
-#define TAPPING_FORCE_HOLD_PER_KEY
 
 // Allows media codes to properly register in macros and rotary encoder code
 #define TAP_CODE_DELAY 10
