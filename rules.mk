@@ -4,6 +4,7 @@ RGBLIGHT_ENABLE = yes      # Enable keyboard RGB underglow
 RGBLIGHT_STARTUP_ANIMATION = no
 
 CAPS_WORD_ENABLE = yes
+REPEAT_KEY_ENABLE = yes
 
 BOOTMAGIC_ENABLE = no      # Virtual DIP switch configuration
 MOUSEKEY_ENABLE = no       # Mouse keys

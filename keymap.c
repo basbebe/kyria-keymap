@@ -135,58 +135,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 uint16_t last_keycode  = KC_NO;
 uint8_t  last_modifier = 0;
-void     process_repeat_key(uint16_t keycode, const keyrecord_t *record) {
-    if (keycode != SYM_REP) {  // Keycode for LT REPEAT
-        // Early return when holding down a pure layer key
-        // to retain modifiers
-        switch (keycode) {
-            case QK_DEF_LAYER ... QK_DEF_LAYER_MAX:
-            case QK_MOMENTARY ... QK_MOMENTARY_MAX:
-            case QK_LAYER_MOD ... QK_LAYER_MOD_MAX:
-            case QK_ONE_SHOT_LAYER ... QK_ONE_SHOT_LAYER_MAX:
-            case QK_TOGGLE_LAYER ... QK_TOGGLE_LAYER_MAX:
-            case QK_TO ... QK_TO_MAX:
-            case QK_LAYER_TAP_TOGGLE ... QK_LAYER_TAP_TOGGLE_MAX:
-                return;
-        }
-        last_modifier = oneshot_mod_state > mod_state ? oneshot_mod_state : mod_state;
-        switch (keycode) {
-            case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
-            case QK_MOD_TAP ... QK_MOD_TAP_MAX:
-                if (record->event.pressed) {
-                    last_keycode = GET_TAP_KC(keycode);
-                }
-                break;
-            default:
-                if (record->event.pressed) {
-                    last_keycode = keycode;
-                }
-                break;
-        }
-    } else {  // keycode == REPEAT
-        if (record->tap.count > 0) {
-            if (record->event.pressed) {
-                register_mods(last_modifier);
-                register_code16(last_keycode);
-            } else {
-                unregister_code16(last_keycode);
-                unregister_mods(last_modifier);
-            }
-        }
-    }
-}
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    process_repeat_key(keycode, record);
     mod_state         = get_mods();
     oneshot_mod_state = get_oneshot_mods();
     switch (keycode) {
-        // return false if REPEAT is tapped
-        case SYM_REP:
-            if (record->tap.count > 0) {
-                return false;
-            }
-            break;
         case NUM_OSS:
             if (record->tap.count > 0) {
                 if (record->event.pressed) {

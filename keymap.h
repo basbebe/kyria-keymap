@@ -13,12 +13,10 @@ uint16_t gui_alt_timer;
 
 enum layers { _BASE = 0, _QWERTY, _SYM, _NUM, _NAV, _FUN };
 
-#define REPEAT KC_F22
-
 // Layer keys
 #define SYM_TAB LT(_SYM, KC_TAB)
 #define NUM_OSS LT(_NUM, OSS)
-#define SYM_REP LT(_SYM, REPEAT)
+#define SYM_REP LT(_SYM, QK_REPEAT_KEY)
 #define SYM_BSP LT(_FUN, KC_BSPC)
 #define NAV_SPC LT(_NAV, KC_SPACE)
 #define SYM_ENT LT(_SYM, KC_ENT)
